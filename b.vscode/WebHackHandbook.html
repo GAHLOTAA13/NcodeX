@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>NcodX - Your Gateway to Knowledge</title>
+<style>
+body {
+   font-family: sans-serif;
+   margin: 0;
+   padding: 0;
+   background-color:white;
+   color: #333;
+   scroll-behavior: smooth;
+  }
+
+  header {
+   background-color: #004f6f;
+   color: #fff;
+   padding: 1em 0;
+   text-align: center;
+  }
+
+
+  footer {
+   text-align: center;
+   padding: 1em 0;
+   background-color: #004f6f;
+   color: #fff;
+   position: fixed;
+   bottom: 0;
+   width: 100%;
+  }
+  main{
+ background-color:white;
+ text-align: center;
+   padding: 1em 0;
+  
+   color: black;
+   position:sticky;
+   bottom: 0;
+   width: 80%;
+  
+ }
+ .b{
+ border:2px solid black;
+ margin-left:20%;
+ margin-top:10%;
+ border-radius:5%;
+ height:50px;
+}
+  main {
+   background-color: white;
+   padding: 20px;
+   display: flex; /* Enable flexbox for inline divs */
+   justify-content: space-around; /* Distribute space around the divs */
+   align-items: center; /* Vertically align items in the center */
+   margin-top: 20px; /* Add some top margin to separate from the header */
+   margin-bottom: 60px; /* Add margin at the bottom to accommodate the fixed footer */
+  }
+
+  .book-container {
+   border: 1px solid #ccc;
+   border-radius: 8px;
+   padding: 15px;
+   margin-left:20%;
+   text-align: center;
+   width: 150px; /* Adjust width as needed */
+  }
+
+  .book-cover {
+   width: 150px;
+   max-width: 150px; /* Adjust max width for cover image */
+   height: 200px;
+   border-radius: 5px;
+   margin-bottom: 10px;
+  }
+
+  /* Make the first book cover larger */
+  .book-container:nth-child(1) .book-cover {
+   max-width: 250px; /* Adjust as needed for the larger cover */
+  }
+
+  .download-button {
+   background-color: #007bff;
+   color: #fff;
+   border: none;
+   padding: 8px 15px;
+   border-radius: 5px;
+   cursor: pointer;
+   text-decoration: none;
+  }
+
+  .download-button:hover {
+   background-color: #0056b3;
+  }
+</style>
+
+</head>
+<body>
+
+ <header>
+  <h1>NcodeX</h1>
+  <p>Unlock Your Potential Through Knowledge</p>
+ </header>
+
+ <main>
+  <div class="book-container">
+   <img src="Hack.jpg" alt="Book Cover 1" class="book-cover">
+   <h3>WEB APPLICATION HACKER's HANDBOOK</h3>
+   <a href="https://drive.google.com/file/d/1aj9zePJPuvy7umjQwKyCWV6Sd1OmPYrs/view?usp=drivesdk" target="_blank" class="download-button">Download</a>
+  </div>
+
+  
+
+ </main>
+ 
+
+ <footer>
+  <p>&copy; 2025 NcodeX. All rights reserved.</p>
+ </footer>
+
+</body>
+</html>

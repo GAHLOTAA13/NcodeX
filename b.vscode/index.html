@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>NcodX - Your Gateway to Knowledge</title>
+ <link href="NcodeX/Web.Dev.html">
+ <style>
+  body {
+   font-family: sans-serif;
+   margin: 0;
+   padding: 0;
+   background-color: #f4f4f4;
+   color: #333;
+   scroll-behavior: smooth;
+  }
+
+  header {
+   background-color: #2c3e50;
+   color: #fff;
+   padding: 1em 0;
+   text-align: center;
+  }
+
+  nav {
+   background-color: #34495e;
+   color: #fff;
+   padding: 0.5em 0;
+   text-align: center;
+  }
+
+  nav a {
+   color: #fff;
+   text-decoration: none;
+   padding: 0.8em 1.5em;
+   display: inline-block;
+   cursor: pointer;
+  }
+
+  nav a:hover {
+   background-color: #1c2530;
+  }
+
+  .container {
+   max-width: 960px;
+   margin: 20px auto;
+   padding: 20px;
+   background-color: #fff;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .hero {
+   text-align: center;
+   padding: 3em 0;
+  }
+
+  .hero h1 {
+   font-size: 2.5em;
+   margin-bottom: 0.5em;
+  }
+
+  .hero p {
+   font-size: 1.2em;
+   color: #555;
+  }
+
+  .courses {
+   margin-top: 2em;
+  }
+
+  .course-card {
+   background-color: #ecf0f1;
+   padding: 1.5em;
+   margin-bottom: 1.5em;
+   border-radius: 5px;
+  }
+
+  .course-card h3 {
+   margin-top: 0;
+   color: #2c3e50;
+  }
+
+  .course-card p {
+   color: #555;
+  }
+
+  .course-material {
+   margin-top: 1em;
+   padding-left: 1em;
+  }
+
+  .course-material a {
+   color: #27ae60;
+   text-decoration: none;
+  }
+
+  .course-material a:hover {
+   text-decoration: underline;
+  }
+
+  .cta-button {
+   display: inline-block;
+   background-color: #27ae60;
+   color: #fff;
+   padding: 0.8em 1.5em;
+   text-decoration: none;
+   border-radius: 5px;
+   margin-top: 1em;
+   cursor: pointer;
+  }
+
+  .cta-button:hover {
+   background-color: #1e8449;
+  }
+
+  .course-list {
+   display: none;
+   margin-top: 1em;
+   padding: 1em;
+   background-color: #f9f9f9;
+   border: 1px solid #ddd;
+   border-radius: 5px;
+   list-style: none;
+   padding-left: 20px;
+  }
+
+  .course-list li {
+   margin-bottom: 0.5em;
+  }
+
+  .course-list a {
+   color: #3498db;
+   text-decoration: none;
+  }
+
+  .course-list a:hover {
+   text-decoration: underline;
+  }
+
+  .contact-details {
+   margin-top: 1em;
+   padding-top: 1em;
+   border-top: 1px solid #ddd;
+  }
+
+  /* Pop-up Styles */
+  .popup {
+   display:none;
+   position: fixed;
+   z-index: 1;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   overflow: auto;
+   background-color: rgba(0,0,0,0.4);
+  }
+
+  .popup-content {
+   background-color: #fefefe;
+   margin: 15% auto;
+   padding: 20px;
+   border: 1px solid #888;
+   width: 80%;
+   border-radius: 5px;
+   position: relative;
+  }
+
+  .close-button {
+   color: #aaa;
+   float: right;
+   font-size: 28px;
+   font-weight: bold;
+  }
+
+  .close-button:hover,
+  .close-button:focus {
+   color: black;
+   text-decoration: none;
+   cursor: pointer;
+  }
+
+  .popup-content h2 {
+   color: #2c3e50;
+   margin-top: 0;
+  }
+
+  .popup-content ul {
+   list-style-type: disc;
+   padding-left: 20px;
+  }
+
+  .popup-content li {
+   margin-bottom: 0.5em;
+  }
+
+  .popup-content p {
+   line-height: 1.6;
+  }
+
+  .popup-content img {
+   width: 100px;
+   height: auto;
+   border-radius: 50%;
+   margin-bottom: 10px;
+  }
+
+  footer {
+   text-align: center;
+   padding: 1em 0;
+   background-color: #34495e;
+   color: #fff;
+   position: sticky;
+   bottom: 0;
+   width: 100%;
+  }
+ </style>
+</head>
+<body>
+
+ <header>
+  <h1>NcodeX</h1>
+  <p>Unlock Your Potential Through Knowledge</p>
+ </header>
+
+ <nav>
+  <a href="index.html">Home</a>
+  <a id="courses-link">Courses</a>
+  <a id="about-us-link">About Us</a>
+  <a href="#contact-section">Contact</a>
+  <a href="#">feedback</a>
+ </nav>
+
+ <div class="container">
+  <section class="hero">
+   <h1>Welcome to NcodeX</h1>
+   <p>Explore a wide range of courses designed to help you grow and succeed.</p>
+   <a href="#" class="cta-button" id="browseCourses">Browse Courses</a>
+   <ul class="course-list" id="courseList">
+    <li><a href="#">Cybersecurity</a></li>
+    <li><a href="#">Web Hacking</a></li>
+   </ul>
+  </section>
+
+  <section class="courses">
+   <h2>Featured Courses</h2>
+   <div class="course-card">
+    <h3>Introduction to Web Development</h3>
+    <p>Learn the fundamentals of HTML, CSS, and JavaScript to build your own websites.</p>
+    <a href="Web.Dev.html" class="cta-button">Goto Course</a>
+   </div>
+
+   <div class="course-card">
+    <h3>The Complete Python Bootcamp</h3>
+    <p>Master Python programming from beginner to advanced level and build real-world projects.</p>
+    <a href="python.html" class="cta-button">Goto Course</a>
+   </div>
+
+   <div class="course-card">
+    <h3>Full Web Development</h3>
+    <p>Internet Programming Using HTML/CSS/JavaScript.</p>
+    <a href="css.html" class="cta-button">Goto Course</a>
+   </div>
+
+   <div class="course-card">
+    <h3>Web Security Fundamentals</h3>
+    <p>Understand the basics of web security and common vulnerabilities.</p>
+    <div class="course-material">
+     <strong>Course Material:</strong>
+     <ul>
+      <li>WEB HACKING HANDBOOK (PDF)</li>
+     </ul>
+    </div>
+    <a href="WebHackHandbook.html" class="cta-button">Goto Course</a>
+   </div>
+  </section>
+
+  <section class="about-us">
+   <h2>About NcodeX</h2>
+   <p>NcodeX is dedicated to providing high-quality, accessible education to learners around the world. Our expert instructors and engaging course content make learning an enjoyable and effective experience.</p>
+  </section>
+
+  <section class="contact" id="contact-section">
+   <h2>Contact Us</h2>
+   <p>Have questions? Reach out to our support team.</p>
+   <div class="contact-details">
+    <h2>MUKESH GAHLOT</h2>
+    <p>Email: <a href="mailto:gahlotmukesh786@gmail.com">gahlotmukesh786@gmail.com</a></p>
+    <p>Instagram: <a href="https://www.instagram.com/gahlot_aa13" target="_blank">@gahlot_aa13</a></p>
+   
+    <h2>RAVINDER </h2>
+   
+    <p>Instagram: <a href="https://www.instagram.com/itz_ravi.71" target="_blank">@itz_ravi.71</a></p>
+   
+  </div>
+  </section>
+ </div>
+
+ <div id="coursesPopup" class="popup">
+  <div class="popup-content">
+   <span class="close-button" id="close-courses-popup">&times;</span>
+   <h2>Available Courses</h2>
+   <ul>
+    <li><a href="Web.Dev.html" target="_blank"> Web Development</a></li>
+    <li><a href="python.html" target="_blank"> Complete Python Bootcamp</a></li>
+    <li><a href="css.html" target="_blank"> Full Web Development</a></li>
+    <li><a  href="WebHackHandbook.html" target="_blank"> Security Fundamentals</a></li>
+ 
+    </ul>
+  </div>
+ </div>
+
+ <div id="aboutUsPopup" class="popup">
+  <div class="popup-content">
+   <span class="close-button" id="close-about-us-popup">&times;</span>
+   <h2>About Us</h2>
+   <img src="mukesh.jpg" alt="Mukesh Gahlot">
+   <p><strong>MUKESH GAHLOT</strong></p>
+   <p>Ex-Navodayan</p>
+   <p>Founder of NcodeX</p>
+   <p>BCA Graduate</p>
+   <img src="ravi.jpg" alt="Ravi">
+   <p><strong>RAVI </strong></p>
+   
+   <p>Co-Founder of NcodeX</p>
+   <p>BCA Graduate</p>
+  </div>
+ </div>
+
+ <footer>
+  <p>&copy; 2025 NcodeX. All rights reserved.</p>
+ </footer>
+
+ <script>
+  const browseCoursesButton = document.getElementById('browseCourses');
+  const courseList = document.getElementById('courseList');
+  const coursesLink = document.getElementById('courses-link');
+  const coursesPopup = document.getElementById('coursesPopup');
+  const closeCoursesButton = document.getElementById('close-courses-popup');
+  const aboutUsLink = document.getElementById('about-us-link');
+  const aboutUsPopup = document.getElementById('aboutUsPopup');
+  const closeAboutUsButton = document.getElementById('close-about-us-popup');
+
+  browseCoursesButton.addEventListener('click', function(event) {
+   event.preventDefault();
+   courseList.style.display = courseList.style.display === 'none' ? 'block' : 'none';
+  });
+
+  coursesLink.addEventListener('click', function(event) {
+   event.preventDefault();
+   coursesPopup.style.display = 'block';
+  });
+
+  closeCoursesButton.addEventListener('click', function() {
+   coursesPopup.style.display = 'none';
+  });
+
+  aboutUsLink.addEventListener('click', function(event) {
+   event.preventDefault();
+   aboutUsPopup.style.display = 'block';
+  });
+
+  closeAboutUsButton.addEventListener('click', function() {
+   aboutUsPopup.style.display = 'none';
+  });
+
+  // Close the pop-up if the user clicks outside of it (for both pop-ups)
+  window.addEventListener('click', function(event) {
+   if (event.target == coursesPopup) {
+    coursesPopup.style.display = 'none';
+   }
+   if (event.target == aboutUsPopup) {
+    aboutUsPopup.style.display = 'none';
+   }
+  });
+ </script>
+
+</body>
+</html>
